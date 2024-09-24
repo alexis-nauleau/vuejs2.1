@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/e2e1900fed.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .succes {
+        background-color: rgba(23, 194, 23, 0.325);
+      }
+    </style>
+    <style>
+      .error {
+        background-color: rgba(229, 22, 22, 0.434);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      Mon texte: {{message}}
+      <a :href="link" :title="message">{{cliques}}</a>
+      <div class="succes" v-if="succes">
+        <p :class="{succes:succes, error:!succes}">
+          bravo enregistrement avec succès
+        </p>
+        <!-- si succes=true, div verte, sinon rouge,
+         dans ce cas là on le vois pas car il y a un vif au dessus qui fait le contraire -->
+        <i class="fa-solid fa-circle-xmark" @click="close"></i>
+      </div>
+      <!--  <div class="error" v-else>
+            <p>pas bravo </p>
+            <i class="fa-solid fa-circle-xmark" v-on:click="close"></i>
+        </div> -->
+      <ul>
+        <li v-for="person in personnes">{{person}}</li>
+      </ul>
+      <input type="text" name="" id="" v-model="message" />
+      <br />
+
+      <form action="">
+        <input type="checkbox" v-model="info" />
+        <p v-if="info">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt,
+          officiis.
+        </p>
+        <br />
+        <input type="checkbox" v-model="infos" />
+        <p v-if="infos">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, quo!
+        </p>
+      </form>
+    </div>
+    <div id="count">{{second}}</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.0-rc.5/vue.js"></script>
+    <script src="1.js"></script>
+  </body>
+</html>

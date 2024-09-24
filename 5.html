@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #app {
+        width: 50%;
+        margin: 50px auto;
+      }
+      .success {
+        background-color: rgba(15, 189, 85, 0.375);
+        padding-left: 30px;
+        padding-top: 10px;
+        position: relative;
+      }
+      .error {
+        background-color: rgba(255, 0, 0, 0.375);
+        padding-left: 30px;
+        padding-top: 10px;
+        position: relative;
+      }
+      .close {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <mon-test
+        :message="message"
+        header="Attention"
+        v-if="alert"
+        @close="hideAlert"
+      ></mon-test>
+      <button @click="showAlert" v-if="!alert">Alerter</button>
+      <counter></counter>
+      <counter :start="3"></counter>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="5.js"></script>
+  </body>
+</html>
